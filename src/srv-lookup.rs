@@ -7,7 +7,7 @@ use std::c_str::CString;
 use std::mem::transmute;
 use std::rand::Rng;
 
-#[link(name="srv")]
+#[link(name="srv", kind="static")]
 #[link(name="resolv")]
 extern {
     fn srv_lookup(name: *const c_char, callback: extern fn(*mut c_void, u16, u16, u16, *const c_char), data: *mut c_void);
