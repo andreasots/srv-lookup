@@ -1,4 +1,3 @@
-target/deps/libsrv.a: src/srv.c
-	mkdir -p target/deps
-	$(CC) $(CPPFLAGS) $(CFLAGS) src/srv.c -c -o target/deps/srv.o
-	$(AR) rcs $@ target/deps/srv.o 
+$(DEPS_DIR)/libsrv.a: src/srv.c
+	$(CC) $(CPPFLAGS) $(CFLAGS) src/srv.c -c -o $(DEPS_DIR)/srv.o
+	$(AR) rcs $@ $(DEPS_DIR)/srv.o
